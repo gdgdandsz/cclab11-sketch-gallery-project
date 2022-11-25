@@ -1,0 +1,21 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  
+}
+
+canvas {
+  display: block;
+}
+#title{
+  text-align:center;
+}
+#canvasContainer{
+  /* make the canvas in the center of the page */
+  display: flex;
+  justify-content: center ;
+}
+.description{
+  text-align:center;
+  margin:10px 135px;
+}
