@@ -9,6 +9,8 @@ canvas {
 }
 #title{
   text-align:center;
+  font-family: 'Rubik Microbe', cursive;
+  font-size: 30px;
 }
 #canvasContainer{
   /* make the canvas in the center of the page */
