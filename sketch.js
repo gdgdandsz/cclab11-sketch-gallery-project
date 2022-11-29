@@ -5,22 +5,22 @@ let water;
 let fish;
 let shells = [];
 function setup() {
-  let canvas = createCanvas(1.5*550, 550);//Here, I adjust the width and height of the canvas
+  let canvas = createCanvas(1.5*450, 450);//Here, I adjust the width and height of the canvas
   canvas.parent("canvasContainer");
-  water = new Water(width / 2, 550 * 1.7);
+  water = new Water(width / 2, 450 * 1.7);
   fish = new Fish(
     random(10, width - 10),
-    random(550 - 100, 550 - 20)
+    random(450 - 100, 450 - 20)
   );//the fish will appear anywhere when the mouse is in Canvas
   for (let i = 0; i < 20; i++) {
     bubbles[i] = new Bubbles(
       random(10, width - 10),
-      random(550 - 150, 550)
+      random(450 - 150, 450)
     );
   }
   let s = new Shells(
     random(10, width - 10),
-    random(550 - 100, 550 - 20)
+    random(450 - 100, 450 - 20)
   );
   shells.push(s);
 }
@@ -56,21 +56,21 @@ function draw() {
     textSize(40);
     text("You Lose!!!", 10, 40);
     stroke(255);
-    text("Caught by Men", 10, 550 - 40);
+    text("Caught by Men", 10, 450 - 40);
   } //#1
   else if (fish.isAboveWater == true && fish.sizeX <= 120) {
     stroke(0);
     textSize(40);
     text("You Lose!!!", 10, 40);
     stroke(255);
-    text("Above the Water", 10, 550 - 40);
+    text("Above the Water", 10, 450 - 40);
   } //#2
   else if (shells.length >= 10 && fish.sizeX <= 120) {
     stroke(0);
     textSize(40);
     text("You Lose!!!", 10, 40);
     stroke(255);
-    text("Hungry", 10, 550 - 40);
+    text("Hungry", 10, 450 - 40);
   } //#3
   
   for (let i = 0; i < bubbles.length; i++) {
@@ -95,7 +95,7 @@ function draw() {
   if (frameCount % 250 == 0) {
     let s = new Shells(
       random(10, width - 10),
-      random(550 - 100, 550 - 20)
+      random(450 - 100, 450 - 20)
     );
     shells.push(s);
     //the appearance of the shells
@@ -142,9 +142,9 @@ function draw() {
   textSize(20);
   text('You can control the fish',10,70)//based on the feedback
   textSize(10)
-  text('Avoid touching the fishing rod, or you will be caught by men',width/2+35,550-40);
-  text('Avoid moving above the water, or you will die of water loss',width/2+35,550-25);
-  text('Try to eat the shells as many as you can, or you will die of hunger',width/2+35,550-10);
+  text('Avoid touching the fishing rod, or you will be caught by men',width/2+35,450-40);
+  text('Avoid moving above the water, or you will die of water loss',width/2+35,450-25);
+  text('Try to eat the shells as many as you can, or you will die of hunger',width/2+35,450-10);
 }//reminding of the numbers
 
 class Water {
@@ -152,11 +152,11 @@ class Water {
     this.angle = 0;
     this.x = x;
     this.y = y;
-    this.diaWidth = 2.8 * 550;
-    this.diaHeight = 2.6 * 550;
+    this.diaWidth = 2.8 * 450;
+    this.diaHeight = 2.6 * 450;
     this.lineX = random(width / 6, width / 2);
-    this.lineY1 = random(550 / 17, 550 / 10);
-    this.lineY = random((2 * 550) / 3, (5 * 550) / 6);
+    this.lineY1 = random(450 / 17, 450 / 10);
+    this.lineY = random((2 * 450) / 3, (5 * 450) / 6);
     this.lineY2=0
     this.transparency = 0;
   }
@@ -258,7 +258,7 @@ class Bubbles {
 
   reappear() {
     if (this.d >= this.r - 20) {
-      this.y = 550;
+      this.y = 450;
       this.dia = random(5, 20);
       //the bubbles will reappear from the bottom, with different sizes
     }
@@ -354,8 +354,8 @@ class Shells {
     if (this.y > height) {
       this.y = height;
       this.ySpd = this.ySpd * -1;
-    } else if (this.y < 550 / 2) {
-      this.y = 550 / 2;
+    } else if (this.y < 450 / 2) {
+      this.y = 450 / 2;
       this.ySpd = this.ySpd * -1;
     }
     //in case the shells are out of the canvas or above the water

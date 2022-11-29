@@ -1,23 +1,42 @@
 html, body {
   margin: 0;
   padding: 0;
-  
+  background-image: url(background-sea.jpeg) ;
+  background-size:100% 100%;
+  background-position:sticky;
 }
 
-canvas {
+/* canvas {
   display: block;
-}
+} */
 #title{
+  /* display:flex; */
   text-align:center;
   font-family: 'Rubik Microbe', cursive;
-  font-size: 30px;
+  font-size: 22px;
+  text-decoration: underline;
+  /* display:inline; */
 }
 #canvasContainer{
-  /* make the canvas in the center of the page */
-  display: flex;
-  justify-content: center ;
+  display: inline;
+  position:relative;
+  left:45%;
 }
 .description{
+  position:relative;
+  display:flex;
+  left:5%;
+  height:240px;
+  width:560px;
+  padding:20px;
+  background-color: aliceblue;
   text-align:center;
-  margin:10px 135px;
+  margin:-35px 135px;
+}
+.center{
+  font-size:15px;
+  padding:10px;
+}
+p{
+  line-height:25px;
 }
